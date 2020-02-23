@@ -1,0 +1,11 @@
+{
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "rules": {
+        // name of rule : array roules where 1 (enable/disable), second object define rule
+        "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+    }
+}
