@@ -1,11 +1,15 @@
 {
-    "extends": [
-        "airbnb",
-        "prettier",
-        "prettier/react"
-    ],
-    "rules": {
-        // name of rule : array roules where 1 (enable/disable), second object define rule
-        "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
-    }
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "globals": {
+    "document": true
+  },
+  "rules": {
+    // name of rule : array roules where 1 (enable/disable), second object define rule
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "no-param-reassign": [2, { "props": false }]
+  }
 }
