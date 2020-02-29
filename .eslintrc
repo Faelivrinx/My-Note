@@ -15,7 +15,8 @@
     "document": true
   },
   "rules": {
-    // name of rule : array roules where 1 (enable/disable), second object define rule
+    // name of rule : array roules where 1 (enable/disable), second object define rule.
+    "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "no-param-reassign": [2, { "props": false }]
   }
