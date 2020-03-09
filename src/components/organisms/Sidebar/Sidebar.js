@@ -6,7 +6,7 @@ import PenIcon from 'assets/icons/pen.svg';
 import TwitterIcon from 'assets/icons/twitter.svg';
 import LogoutIcon from 'assets/icons/logout.svg';
 import LogoIcon from 'assets/icons/logo.svg';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const StyledLogo = styled.p`
+const StyledLogoLink = styled(NavLink)`
   display: block;
   width: 67px;
   height: 67px;
@@ -46,19 +46,19 @@ const StyledLogoutButton = styled(ButtonIcon)`
 
 const Sidebar = ({ pageType }) => (
   <StyledWrapper activeColor={pageType}>
-    <StyledLogo />
+    <StyledLogoLink to="/" />
     <StyledLinkList>
       <li>
-        <ButtonIcon as={Link} to="/" icon={PenIcon} />
+        <ButtonIcon exact as={NavLink} to="/" icon={PenIcon} activeClass="active" />
       </li>
       <li>
-        <ButtonIcon as={Link} to="/twitters" icon={TwitterIcon} />
+        <ButtonIcon as={NavLink} to="/twitters" icon={TwitterIcon} activeClass="active" />
       </li>
       <li>
-        <ButtonIcon as={Link} to="/articles" icon={BulbIcon} />
+        <ButtonIcon as={NavLink} to="/articles" icon={BulbIcon} activeClass="active" />
       </li>
     </StyledLinkList>
-    <StyledLogoutButton as={Link} to="/" icon={LogoutIcon} />
+    <StyledLogoutButton as={NavLink} to="/logout" icon={LogoutIcon} />
   </StyledWrapper>
 );
 
