@@ -98,9 +98,10 @@ const GlobalStyles = createGlobalStyle`
 
 
 *, *::before, *::after{
+  margin: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -108,6 +109,7 @@ html {
 }
 
 body {
+    padding-left: 157px;
     font-size: 1.6rem;
     font-family: "Montserrat", sans-serif;
 }
