@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
 
 const InnerWrapper = styled.div`
   position: relative;
-  padding: 17px 30px;
+  padding: 20px 30px;
   background-color: ${({ activeColor, theme }) => theme[activeColor]};
 
   ${({ flex }) =>
@@ -63,20 +63,16 @@ const StyledLink = styled.a`
   transform: translateY(-50%);
 `;
 
-const Card = ({ cardType }) => (
+const Card = ({ cardType, title, created, twitterName, articleUrl, content }) => (
   <StyledWrapper>
     <InnerWrapper activeColor={cardType}>
-      <StyledHeading>Hello Roman</StyledHeading>
-      <DateInfo>3 days</DateInfo>
-      {cardType === 'twitter' && <StyledAvatar src="https://avatars.io/twitter/hello_roman" />}
-      {cardType === 'article' && <StyledLink href="https://youtube.com/hello_roman" />}
+      <StyledHeading>{title}</StyledHeading>
+      <DateInfo>{created}</DateInfo>
+      {cardType === 'twitter' && <StyledAvatar src={`https://avatars.io/twitter/${twitterName}`} />}
+      {cardType === 'article' && <StyledLink href={articleUrl} />}
     </InnerWrapper>
     <InnerWrapper flex>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas euismod leo ut pretium
-        congue. In placerat porta tortor id venenatis. Nulla venenatis velit at mi ultricies, eu
-        bibendum urna consequat
-      </Paragraph>
+      <Paragraph>{content}</Paragraph>
       <Button secondary>Remove</Button>
     </InnerWrapper>
   </StyledWrapper>
@@ -84,10 +80,17 @@ const Card = ({ cardType }) => (
 
 Card.propTypes = {
   cardType: PropTypes.oneOf(['note', 'twitter', 'article']),
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  created: PropTypes.string.isRequired,
+  twitterName: PropTypes.string,
+  articleUrl: PropTypes.string,
 };
 
 Card.defaultProps = {
   cardType: 'note',
+  twitterName: null,
+  articleUrl: null,
 };
 
 export default Card;
