@@ -7,6 +7,7 @@ import TwitterIcon from 'assets/icons/twitter.svg';
 import LogoutIcon from 'assets/icons/logout.svg';
 import LogoIcon from 'assets/icons/logo.svg';
 import { NavLink } from 'react-router-dom';
+import { routes } from 'routes';
 
 const StyledWrapper = styled.div`
   position: fixed;
@@ -49,16 +50,16 @@ const Sidebar = ({ pageType }) => (
     <StyledLogoLink to="/" />
     <StyledLinkList>
       <li>
-        <ButtonIcon exact as={NavLink} to="/" icon={PenIcon} activeClassName="active" />
+        <ButtonIcon as={NavLink} to={routes.notes} icon={PenIcon} activeClassName="active" />
       </li>
       <li>
-        <ButtonIcon as={NavLink} to="/twitters" icon={TwitterIcon} activeClassName="active" />
+        <ButtonIcon as={NavLink} to={routes.twitters} icon={TwitterIcon} activeClassName="active" />
       </li>
       <li>
-        <ButtonIcon as={NavLink} to="/articles" icon={BulbIcon} activeClassName="active" />
+        <ButtonIcon as={NavLink} to={routes.articles} icon={BulbIcon} activeClassName="active" />
       </li>
     </StyledLinkList>
-    <StyledLogoutButton as={NavLink} to="/logout" icon={LogoutIcon} />
+    <StyledLogoutButton as={NavLink} to={routes.login} icon={LogoutIcon} />
   </StyledWrapper>
 );
 

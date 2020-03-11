@@ -6,8 +6,8 @@ export default {
   title: 'Sidebar',
 };
 
-export const sidebarNote = () => <Sidebar pageType="note" />;
+export const sidebarNote = () => <Sidebar pageType="notes" />;
 
-export const sidebarTwitter = () => <Sidebar pageType="twitter" />;
+export const sidebarTwitter = () => <Sidebar pageType="twitters" />;
 
-export const sidebarArticles = () => <Sidebar pageType="article" />;
+export const sidebarArticles = () => <Sidebar pageType="articles" />;
